@@ -6,7 +6,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import LoginLayout from "@/components/LoginLayout";
 import { useRouter } from 'next/router';
-import Courses from "@/components/courses";
+import Courses from "@/components/Courses";
 
 export default function EditPhoto() {
 
