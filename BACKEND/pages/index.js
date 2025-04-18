@@ -50,6 +50,7 @@ export default function Home() {
         const projects = await projectsRes.json();
         const shops = await shopsRes.json();
         const courses = await coursesRes.json();
+        console.log(courses, "courses");
 
         setBlogsData(blogs);
         setProjectData(projects);

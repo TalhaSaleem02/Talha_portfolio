@@ -1,4 +1,4 @@
-import Courses from "@/components/courses";
+import Courses from '@/components/Course';
 import { SiBloglovin } from "react-icons/si";
 
 export default function addphoto() {

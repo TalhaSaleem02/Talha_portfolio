@@ -18,6 +18,7 @@ export default function gallery() {
  
      // Fetch all blogs
      const { alldata, loading } = useFetchData('/api/courses');
+
  
  
  
@@ -42,9 +43,10 @@ export default function gallery() {
      const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
  
      // Filter only published blogs
-     const publishedBlogs = currentBlogs.length > 0
-         ? currentBlogs.filter(blog => blog.status?.toLowerCase() === 'published')
-         : [];
+    const publishedBlogs = currentBlogs.length > 0
+        ? currentBlogs.filter(blog => blog.status === "Published")
+        : [];
+       
  
  
  
@@ -53,7 +55,7 @@ export default function gallery() {
      const pageNumbers = Array.from({ length: Math.ceil(allBlogs / perPage) }, (_, i) => i + 1);
  
  
- 
+
 
     return <>
       

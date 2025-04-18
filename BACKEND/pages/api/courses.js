@@ -1,5 +1,5 @@
 import mongooseConnect from "@/lib/mongoose";
-import { Courses } from "@/models/courses"
+import { Course } from "@/models/Course";
 
 export default async function handle(req, res) {
     await mongooseConnect();
@@ -13,7 +13,7 @@ export default async function handle(req, res) {
 
             console.log("Received video:", videos); // Debugging log
 
-            const blogDoc = await Courses.create({
+            const blogDoc = await Course.create({
                 title,
                 slug,
                 images,
@@ -34,10 +34,10 @@ export default async function handle(req, res) {
         if (method === "GET") {
             // Handle GET request (Fetch blog(s))
             if (req.query?.id) {
-                const blog = await Courses.findById(req.query.id);
+                const blog = await Course.findById(req.query.id);
                 return res.json(blog);
             } else {
-                const blogs = await Courses.find().sort({ createdAt: -1 }); // Fetch all and sort by newest
+                const blogs = await Course.find().sort({ createdAt: -1 }); // Fetch all and sort by newest
                 return res.json(blogs);
             }
         }
@@ -46,7 +46,7 @@ export default async function handle(req, res) {
             // Handle PUT request (Update blog)
             const { _id, title, slug, images, videos, description, instructor,  projectCategory, tags, livePreview, status } = req.body;
 
-            await Courses.updateOne({ _id }, {
+            await Course.updateOne({ _id }, {
                 title, slug, images, videos, description, instructor,  projectCategory, tags, livePreview, status
             });
 
@@ -56,7 +56,7 @@ export default async function handle(req, res) {
         if (method === "DELETE") {
             // Handle DELETE request (Delete blog)
             if (req.query?.id) {
-                await Courses.deleteOne({ _id: req.query.id });
+                await Course.deleteOne({ _id: req.query.id });
                 return res.json({ success: true, message: "Courses deleted successfully" });
             }
         }

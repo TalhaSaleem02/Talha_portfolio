@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const { Schema, models, model } = mongoose;
 
-const CoursesSchema = new Schema(
+const CourseSchema = new Schema(
   {
     title: {
       type: String,
@@ -57,4 +57,4 @@ const CoursesSchema = new Schema(
   { timestamps: true }
 );
 
-export const Courses = models.Courses || model("Courses", CoursesSchema, 'courses');
+export const Course = models.Course || model("Course", CourseSchema, 'courses');
