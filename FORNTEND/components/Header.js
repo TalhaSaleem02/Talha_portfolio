@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { IoMoonSharp } from "react-icons/io5";
 import { LuSun, LuSunMoon } from "react-icons/lu";
+import { BsToggleOff, BsToggleOn } from "react-icons/bs";
 
 export default function Header() {
   const router = useRouter();
@@ -59,36 +60,36 @@ export default function Header() {
         </div>
 
         <div className="navlist flex gap-1">
-          <ul className="flex gap-1">
+          <ul className="flex gap-1" >
           <li>
                           <Link href="/" onClick={() => handleLinkClick('/')} className={activeLink === '/' ? 'active' : ''}>Home</Link>
                       </li>
                      
                       <li>
-                          <Link href="/gallery" onClick={() => handleLinkClick('/')} className={activeLink === '/gallery' ? 'active' : ''}>Classroom</Link>
+                          <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} className={activeLink === '/gallery' ? 'active' : ''}>Classroom</Link>
                       </li>
                       <li>
-                          <Link href="/services" onClick={() => handleLinkClick('/')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>
+                          <Link href="/services" onClick={() => handleLinkClick('/services')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>
                       </li>
                       <li>
-                          <Link href="/projects" onClick={() => handleLinkClick('/')} className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
+                          <Link href="/projects" onClick={() => handleLinkClick('/projects')} className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
                       </li>
                       <li>
-                          <Link href="/blogs" onClick={() => handleLinkClick('/')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
+                          <Link href="/blogs" onClick={() => handleLinkClick('/blogs')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
                       </li>
                       <li>
-                          <Link href="/shop" onClick={() => handleLinkClick('/')} className={activeLink === '/shop' ? 'active' : ''}>Certificates</Link>
+                          <Link href="/shop" onClick={() => handleLinkClick('/shop')} className={activeLink === '/shop' ? 'active' : ''}>Certificates</Link>
                       </li>
                       <li>
-                          <Link href="/contact" onClick={() => handleLinkClick('/')} className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
+                          <Link href="/contact" onClick={() => handleLinkClick('/contact')} className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
                       </li>
                       <li>
-                          <Link href="/youtube" onClick={() => handleLinkClick('/')} className={activeLink === '/youtube' ? 'active' : ''}>Youtube</Link>
+                          <Link href="/youtube" onClick={() => handleLinkClick('/youtube')} className={activeLink === '/youtube' ? 'active' : ''}>Youtube</Link>
                       </li>
           </ul>
 
           <div className="darkmodetoggle" onClick={toggleDarkMode}>
-            {darkMode ? <IoMoonSharp /> : <LuSun />}
+            {darkMode ? <BsToggleOn /> : <BsToggleOff />}
           </div>
 
           <button>
@@ -102,42 +103,40 @@ export default function Header() {
 
         <div className={mobile ? "mobilenavlist active" : "mobilenavlist"}>
           <span onClick={handleMobileClose} className={mobile ? "mobile active" : ""}></span>
+
           <div className="mobilelogo">
             <img src="/img/logo1.png" alt="logo" />
             <h2>Talha Saleem</h2>
           </div>
 
-          <ul>
-                      <li>
-                          <Link href="/" onClick={() => handleLinkClick('/')} className={activeLink === '/' ? 'active' : ''}>Home</Link>
-                      </li>
-                      
-                      <li>
-                          <Link href="/gallery" onClick={() => handleLinkClick('/')} className={activeLink === '/gallery' ? 'active' : ''}>Classroom</Link>
-                      </li>
-                      <li>
-                          <Link href="/services" onClick={() => handleLinkClick('/')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>
-                      </li>
-                      <li>
-                          <Link href="/projects" onClick={() => handleLinkClick('/')} className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
-                      </li>
-                      <li>
-                          <Link href="/blogs" onClick={() => handleLinkClick('/')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
-                      </li>
-                      <li>
-                          <Link href="/shop" onClick={() => handleLinkClick('/')} className={activeLink === '/shop' ? 'active' : ''}>Certificates</Link>
-                      </li>
-                      <li>
-                          <Link href="/contact" onClick={() => handleLinkClick('/')} className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
-                      </li>
-                      <li>
-                          <Link href="/youtube" onClick={() => handleLinkClick('/')} className={activeLink === '/youtube' ? 'active' : ''}>Youtube</Link>
-                      </li>
-                  </ul>
-                  <p>© 2023 Talha. All rights reserved.</p>
+          <ul className="flex gap-1 flex-col flex-left mt-3" onClick={handleMobileClose}>
+            <li>
+              <Link href="/" onClick={() => handleLinkClick('/')} className={activeLink === '/' ? 'active' : ''}>Home</Link>
+            </li>
+            <li>
+              <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} className={activeLink === '/gallery' ? 'active' : ''}>Classroom</Link>
+            </li>
+            <li>
+              <Link href="/services" onClick={() => handleLinkClick('/services')} className={activeLink === '/services' ? 'active' : ''}>Services</Link>
+            </li>
+            <li>
+              <Link href="/projects" onClick={() => handleLinkClick('/projects')} className={activeLink === '/projects' ? 'active' : ''}>Projects</Link>
+            </li>
+            <li>
+              <Link href="/blogs" onClick={() => handleLinkClick('/blogs')} className={activeLink === '/blogs' ? 'active' : ''}>Blogs</Link>
+            </li>
+            <li>
+              <Link href="/shop" onClick={() => handleLinkClick('/shop')} className={activeLink === '/shop' ? 'active' : ''}>Certificates</Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => handleLinkClick('/contact')} className={activeLink === '/contact' ? 'active' : ''}>Contact</Link>
+            </li>
+            <li>
+              <Link href="/youtube" onClick={() => handleLinkClick('/youtube')} className={activeLink === '/youtube' ? 'active' : ''}>Youtube</Link>
+            </li>
+          </ul>
 
-
-
+          <p>© 2024 Talha. All rights reserved.</p>
         </div>
       </nav>
     </header>

@@ -185,8 +185,8 @@ export default function Home() {
                       
                       autoStart: true,
                       loop: true,
-                      deleteSpeed: 50,
-                      delay: 100,
+                      deleteSpeed: 40,
+                      delay: 80,
                       cursor: '', // Disable built-in cursor
                     }}
                     
@@ -201,7 +201,7 @@ export default function Home() {
               
 
               {/* Resume Button & Social Icons */}
-              <div className="hero_btn_box">
+              <div className="hero_btn_box" data-aos="fade-up">
                 <Link href="/img/resume.pdf"
                   className="download_cv"
                   target="_blank"
@@ -213,22 +213,22 @@ export default function Home() {
 
                 <ul className="hero_social">
                   <li>
-                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
                       <FaTwitter />
                     </a>
                   </li>
                   <li>
-                    <a href="https://medium.com/@talhasaleemahmed" target="_blank" rel="noopener noreferrer">
+                    <a href="https://medium.com/@talhasaleemahmed" target="_blank" rel="noopener noreferrer"  data-aos="fade-right">
                       <LiaBasketballBallSolid />
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/talha-saleem-ahmad-69b83821/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/talha-saleem-ahmad-69b83821/" target="_blank" rel="noopener noreferrer" data-aos="fade-left">
                       <GrLinkedinOption />
                     </a>
                   </li>
                   <li>
-                    <a href="https://github.com/TalhaSaleem02" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/TalhaSaleem02" target="_blank" rel="noopener noreferrer" data-aos="fade-left">
                       <FaGithub />
                     </a>
                   </li>
@@ -524,7 +524,7 @@ export default function Home() {
           <div className="myskills_title">
             <h2>My Skills</h2>
             <p>
-              We put your ideas and your wishes in the form of a unique project that inspires you and your users.
+              I put your ideas and your wishes in the form of a unique project that inspires you.
             </p>
           </div>
 
@@ -541,7 +541,7 @@ export default function Home() {
           >
             Web Development
           </h3>
-          <marquee behavior="scroll" direction="left" scrollamount="10">
+         
             <div className="myskils_cards" data-aos="fade-left">
               {[
                 ["HTML5", "https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"],
@@ -562,7 +562,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </marquee>
+         
 
           {/* Data Science, AI & ML */}
           <h3 className="text-center"
@@ -573,7 +573,7 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Data Science, AI & ML</h3>
-          <marquee behavior="scroll" direction="right" scrollamount="9">
+         
             <div className="myskils_cards" data-aos="fade-right">
               {[
                 ["Python", "https://www.vectorlogo.zone/logos/python/python-icon.svg"],
@@ -596,7 +596,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </marquee>
+          
 
           {/* Data Analyst */}
           <h3 className="text-center"
@@ -607,7 +607,7 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Data Analyst</h3>
-          <marquee behavior="scroll" direction="left" scrollamount="8">
+          
             <div className="myskils_cards" data-aos="fade-up">
               {[
                 ["RStudio", "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"],
@@ -624,7 +624,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </marquee>
+         
 
           {/* Biotechnology */}
           <h3 className="text-center"
@@ -635,8 +635,8 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Biotechnology</h3>
-          <marquee behavior="scroll" direction="right" scrollamount="7">
-            <div className="myskils_cards" data-aos="fade-up">
+          
+            <div className="myskils_cards" data-aos="fade-down">
               {[
                 ["Genetics", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/DNA_chemical_structure.svg/250px-DNA_chemical_structure.svg.png"],
                 ["Cell Biology", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Animal_cell_cycle-en.svg/500px-Animal_cell_cycle-en.svg.png"],
@@ -654,7 +654,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </marquee>
+         
         </div>
       </section>
 
