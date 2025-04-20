@@ -677,7 +677,7 @@ export default function Home() {
               ?.filter(blog => blog.images?.[0]) // Remove blogs with no image
               .slice(0, 6) // Limit display
               .map((blog) => (
-                <Link href={`/blogs/${blog.slug}`} key={blog._id} className="re_blog" style={{ minWidth: '300px' }}>
+                <Link href={`https://talha-portfolio-woad.vercel.app/blogs`} key={blog._id} className="re_blog" style={{ minWidth: '300px' }}>
                   <div className="re_blogimg">
                     <img
                       src={blog.images[0]}
