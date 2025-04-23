@@ -124,14 +124,14 @@ export default function Home() {
   };
 
 
-    const [showCursor, setShowCursor] = useState(true);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setShowCursor(prev => !prev);
-      }, 500); // Blink every 500ms
-      return () => clearInterval(interval);
-    }, []);
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500); // Blink every 500ms
+    return () => clearInterval(interval);
+  }, []);
 
 
 
@@ -167,10 +167,10 @@ export default function Home() {
                 Data Scientist +{' '}
                 <span
                   className="typed-text"
-                  
+
                 >
                   {/* Typewriter Effect */}
-                 
+
                   <Typewriter
                     options={{
                       strings: [
@@ -182,43 +182,52 @@ export default function Home() {
                         'Generative AI',
                         'Agentic AI',
                       ],
-                      
+
                       autoStart: true,
                       loop: true,
                       deleteSpeed: 40,
                       delay: 80,
                       cursor: '', // Disable built-in cursor
                     }}
-                    
-                  /> 
-                 
+
+                  />
+
                 </span>
               </h1>
               <div className="hero_img_box heroimgbox">
                 <img src="/img/mee.png" alt="coder" />
               </div>
 
-              
+
 
               {/* Resume Button & Social Icons */}
               <div className="hero_btn_box" data-aos="fade-up">
-                <Link href="/img/resume.pdf"
+                <Link
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
                   className="download_cv"
-                  target="_blank"
-                  rel="noopener noreferrer">
+                  style={{
+                    pointerEvents: 'none',
+                    opacity: 0.5,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => e.target.style.opacity = 1}  // When hover starts
+                  onMouseLeave={(e) => e.target.style.opacity = 0.5}  // When hover ends
+                >
                   Download CV <BiDownload />
                 </Link>
 
-               
+
+
+
+
 
                 <ul className="hero_social">
                   <li>
-                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
-                      <FaTwitter />
-                    </a>
+                    
                   </li>
                   <li>
-                    <a href="https://medium.com/@talhasaleemahmed" target="_blank" rel="noopener noreferrer"  data-aos="fade-right">
+                    <a href="https://medium.com/@talhasaleemahmed" target="_blank" rel="noopener noreferrer" data-aos="fade-right">
                       <LiaBasketballBallSolid />
                     </a>
                   </li>
@@ -290,27 +299,27 @@ export default function Home() {
           <div className="services_titles">
             <h2>My Expertise</h2>
             <span
-                  className="typed-text"
-                  
-                >
-                  {/* Typewriter Effect */}
-                 
-                  <Typewriter
-                    options={{
-                      strings: [
-                        `"Be bold enough to pursue what you’re not fully ready for, always deliver more than expected, embrace experimentation to fuel innovation, and never forget — those who dare to think differently are the ones who truly change the world."`
-                      ],
-                      
-                      autoStart: true,
-                      loop: true,
-                      deleteSpeed: 50,
-                      delay: 100,
-                      cursor: '', // Disable built-in cursor
-                    }}
-                    
-                  /> 
-                 
-                </span>
+              className="typed-text"
+
+            >
+              {/* Typewriter Effect */}
+
+              <Typewriter
+                options={{
+                  strings: [
+                    `"Be bold enough to pursue what you’re not fully ready for, always deliver more than expected, embrace experimentation to fuel innovation, and never forget — those who dare to think differently are the ones who truly change the world."`
+                  ],
+
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 100,
+                  cursor: '', // Disable built-in cursor
+                }}
+
+              />
+
+            </span>
           </div>
 
           <div className="services_menu" data-aos="fade-down">
@@ -433,28 +442,36 @@ export default function Home() {
 
             <div className="exper_cards">
 
-            <div className="exper_card" data-aos="fade-right">
+              <div className="exper_card" data-aos="fade-right">
                 <span>Present</span>
                 <h3>Instructor</h3>
                 <p>InnovatiCS, USA</p>
                 <p>Programming, AI, ML, GenAI, Agentic AI</p>
               </div>
 
+
+              <div className="exper_card" data-aos="fade-right">
+                <span>Present</span>
+                <h3>Data Consultant and Projects</h3>
+                <p>Freelance, USA</p>
+                <p>Built, deployed, and provided consultancy to global clients in Data Science, AI, and Web Development.</p>
+              </div>
+
               <div className="exper_card" data-aos="fade-right">
                 <span>2023 - 2024 </span>
                 <h3>Lecturer in Computing</h3>
                 <p>Gloucestershire College UK</p>
-                
+
               </div>
 
               <div className="exper_card" data-aos="fade-right">
                 <span>2023</span>
-                <h3>Computer Science Instructor</h3>
+                <h3>Computer Science Instructor, Data Analyst</h3>
                 <p>Frobel Independent School London</p>
-               
+
               </div>
 
-             
+
 
               <div className="exper_card" data-aos="fade-right">
                 <span>2020 - 2022</span>
@@ -477,7 +494,7 @@ export default function Home() {
                 <p>PCR & Genomic data analysis with Galaxy platform (NGS)</p>
               </div>
 
-             
+
 
             </div>
           </div>
@@ -495,21 +512,21 @@ export default function Home() {
                 <span>2023</span>
                 <h3>MSc: Applied Data Science</h3>
                 <p>University of Essex, UK</p>
-               
+
               </div>
 
               <div className="exper_card" data-aos="fade-left">
                 <span>2018</span>
                 <h3>Advance Diploma in Software Technology</h3>
                 <p>Pakistan</p>
-                
+
               </div>
 
-              <div className="exper_card"  data-aos="fade-left">
+              <div className="exper_card" data-aos="fade-left">
                 <span>[2015]</span>
                 <h3>MSc: Biotechnology and Informatics</h3>
                 <p>Norwegian University of Science and Technology, Norway</p>
-                
+
               </div>
 
             </div>
@@ -541,28 +558,28 @@ export default function Home() {
           >
             Web Development
           </h3>
-         
-            <div className="myskils_cards" data-aos="fade-left">
-              {[
-                ["HTML5", "https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"],
-                ["CSS3", "https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg"],
-                ["JavaScript", "https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg"],
-                ["React", "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"],
-                ["Next.js", "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg"],
-                ["MongoDB", "https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg"],
-                ["Express.js", "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"],
-                ["Angular", "https://angular.io/assets/images/logos/angular/angular.svg"],
-                ["Node.js", "https://nodejs.org/static/images/logo.svg"]
-              ].map(([name, url]) => (
-                <div className="mys_card" key={name}>
-                  <div className="mys_inner">
-                    <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
-                  </div>
-                  <p className="text-center">{name}</p>
+
+          <div className="myskils_cards" data-aos="fade-left">
+            {[
+              ["HTML5", "https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"],
+              ["CSS3", "https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg"],
+              ["JavaScript", "https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg"],
+              ["React", "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"],
+              ["Next.js", "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg"],
+              ["MongoDB", "https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg"],
+              ["Express.js", "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"],
+              ["Angular", "https://angular.io/assets/images/logos/angular/angular.svg"],
+              ["Node.js", "https://nodejs.org/static/images/logo.svg"]
+            ].map(([name, url]) => (
+              <div className="mys_card" key={name}>
+                <div className="mys_inner">
+                  <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
                 </div>
-              ))}
-            </div>
-         
+                <p className="text-center">{name}</p>
+              </div>
+            ))}
+          </div>
+
 
           {/* Data Science, AI & ML */}
           <h3 className="text-center"
@@ -573,30 +590,30 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Data Science, AI & ML</h3>
-         
-            <div className="myskils_cards" data-aos="fade-right">
-              {[
-                ["Python", "https://www.vectorlogo.zone/logos/python/python-icon.svg"],
-                ["NumPy", "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg"],
-                ["Pandas", "https://pandas.pydata.org/static/img/pandas_mark.svg"],
-                ["Scikit-learn", "https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"],
-                ["PyTorch", "https://pytorch.org/assets/images/pytorch-logo.png"],
-                ["TensorFlow", "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"],
-                ["Keras", "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"],
-                ["Matplotlib", "https://matplotlib.org/_static/images/logo2.svg"],
-                ["Seaborn", "https://seaborn.pydata.org/_static/logo-wide-lightbg.svg"],
-                ["Hugging Face", "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"],
-                ["Agentic AI", "https://uploads-ssl.webflow.com/63ed4e1c49f6f6f7e7aa886e/64876077f6e7e109c4b9288f_logo.png"]
-              ].map(([name, url]) => (
-                <div className="mys_card" key={name}>
-                  <div className="mys_inner">
-                    <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
-                  </div>
-                  <p className="text-center">{name}</p>
+
+          <div className="myskils_cards" data-aos="fade-right">
+            {[
+              ["Python", "https://www.vectorlogo.zone/logos/python/python-icon.svg"],
+              ["NumPy", "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg"],
+              ["Pandas", "https://pandas.pydata.org/static/img/pandas_mark.svg"],
+              ["Scikit-learn", "https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"],
+              ["PyTorch", "https://pytorch.org/assets/images/pytorch-logo.png"],
+              ["TensorFlow", "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg"],
+              ["Keras", "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"],
+              ["Matplotlib", "https://matplotlib.org/_static/images/logo2.svg"],
+              ["Seaborn", "https://seaborn.pydata.org/_static/logo-wide-lightbg.svg"],
+              ["Hugging Face", "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"],
+              ["Agentic AI", "https://uploads-ssl.webflow.com/63ed4e1c49f6f6f7e7aa886e/64876077f6e7e109c4b9288f_logo.png"]
+            ].map(([name, url]) => (
+              <div className="mys_card" key={name}>
+                <div className="mys_inner">
+                  <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
                 </div>
-              ))}
-            </div>
-          
+                <p className="text-center">{name}</p>
+              </div>
+            ))}
+          </div>
+
 
           {/* Data Analyst */}
           <h3 className="text-center"
@@ -607,24 +624,24 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Data Analyst</h3>
-          
-            <div className="myskils_cards" data-aos="fade-up">
-              {[
-                ["RStudio", "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"],
-                ["MySQL", "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg"],
-                ["Excel", "https://cdn-icons-png.flaticon.com/512/732/732220.png"],
-                ["Power BI", "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"],
-                ["Tableau", "https://www.vectorlogo.zone/logos/tableau/tableau-icon.svg"]
-              ].map(([name, url]) => (
-                <div className="mys_card" key={name}>
-                  <div className="mys_inner">
-                    <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
-                  </div>
-                  <p className="text-center">{name}</p>
+
+          <div className="myskils_cards" data-aos="fade-up">
+            {[
+              ["RStudio", "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"],
+              ["MySQL", "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg"],
+              ["Excel", "https://cdn-icons-png.flaticon.com/512/732/732220.png"],
+              ["Power BI", "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"],
+              ["Tableau", "https://www.vectorlogo.zone/logos/tableau/tableau-icon.svg"]
+            ].map(([name, url]) => (
+              <div className="mys_card" key={name}>
+                <div className="mys_inner">
+                  <img src={url} alt={name} style={{ maxHeight: '60px', objectFit: 'contain' }} />
                 </div>
-              ))}
-            </div>
-         
+                <p className="text-center">{name}</p>
+              </div>
+            ))}
+          </div>
+
 
           {/* Biotechnology */}
           <h3 className="text-center"
@@ -635,26 +652,26 @@ export default function Home() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>Biotechnology</h3>
-          
-            <div className="myskils_cards" data-aos="fade-down">
-              {[
-                ["Genetics", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/DNA_chemical_structure.svg/250px-DNA_chemical_structure.svg.png"],
-                ["Cell Biology", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Animal_cell_cycle-en.svg/500px-Animal_cell_cycle-en.svg.png"],
-                ["Bioinformatics", "https://en.wikipedia.org/wiki/Bioinformatics#/media/File:1kqf_opm.png"],
-                ["Enzyme Engineering", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Master_Mix_with_Primers_form_PCR.jpg/250px-Master_Mix_with_Primers_form_PCR.jpg"],
-                ["Molecular Biology", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/197-Zika_Virus-ZikaVirus.tif/lossy-page1-220px-197-Zika_Virus-ZikaVirus.tif.jpg"],
-                ["Protein Purification", "https://en.wikipedia.org/wiki/Protein#/media/File:Domain_organisation_of_EVH_proteins.png"],
-                ["Tissue Culture", "https://en.wikipedia.org/wiki/Plant_tissue_culture#/media/File:Plant_Tissue_culture.jpg"]
-              ].map(([name, url]) => (
-                <div className="mys_card" key={name}>
-                  <div className="mys_inner">
-                    <img src={url} alt={name} style={{ maxHeight: '100px', objectFit: 'contain' }} />
-                  </div>
-                  <p className="text-center">{name}</p>
+
+          <div className="myskils_cards" data-aos="fade-down">
+            {[
+              ["Genetics", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/DNA_chemical_structure.svg/250px-DNA_chemical_structure.svg.png"],
+              ["Cell Biology", "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Animal_cell_cycle-en.svg/500px-Animal_cell_cycle-en.svg.png"],
+              ["Bioinformatics", "https://en.wikipedia.org/wiki/Bioinformatics#/media/File:1kqf_opm.png"],
+              ["Enzyme Engineering", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Master_Mix_with_Primers_form_PCR.jpg/250px-Master_Mix_with_Primers_form_PCR.jpg"],
+              ["Molecular Biology", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/197-Zika_Virus-ZikaVirus.tif/lossy-page1-220px-197-Zika_Virus-ZikaVirus.tif.jpg"],
+              ["Protein Purification", "https://en.wikipedia.org/wiki/Protein#/media/File:Domain_organisation_of_EVH_proteins.png"],
+              ["Tissue Culture", "https://en.wikipedia.org/wiki/Plant_tissue_culture#/media/File:Plant_Tissue_culture.jpg"]
+            ].map(([name, url]) => (
+              <div className="mys_card" key={name}>
+                <div className="mys_inner">
+                  <img src={url} alt={name} style={{ maxHeight: '100px', objectFit: 'contain' }} />
                 </div>
-              ))}
-            </div>
-         
+                <p className="text-center">{name}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
